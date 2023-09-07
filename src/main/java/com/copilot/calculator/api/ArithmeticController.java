@@ -18,7 +18,7 @@ public class ArithmeticController {
             "add",      (Double a, Double b) -> a + b,
             "subtract", (Double a, Double b) -> a - b,
             "multiply", (Double a, Double b) -> a * b,
-            "divide",   (Double a, Double b) -> a / b,
+            "divide",   (Double a, Double b) -> a / b
         );
 
         if (!operations.containsKey(operation)) {
