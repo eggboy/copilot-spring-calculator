@@ -12,7 +12,8 @@
 			"extensions": [
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
-				"vscjava.vscode-java-pack"
+				"vscjava.vscode-java-pack",
+				"hbenl.vscode-test-explorer"
 			]
 		}
 	},
