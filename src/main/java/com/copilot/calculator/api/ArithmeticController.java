@@ -19,7 +19,6 @@ public class ArithmeticController {
             "subtract", (Double a, Double b) -> a - b,
             "multiply", (Double a, Double b) -> a * b,
             "divide",   (Double a, Double b) -> a / b,
-            "power",    (Double a, Double b) -> Math.pow(a, b)
         );
 
         if (!operations.containsKey(operation)) {
