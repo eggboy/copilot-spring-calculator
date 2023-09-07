@@ -14,11 +14,12 @@ public class ArithmeticController {
     public String calculate(@RequestParam String operation, @RequestParam String operand1, @RequestParam String operand2) {
 
         // TODO: Add operator
-        var operations = Map.<String, BinaryOperator<Double>>ofEntries(
-            Map.entry("add",      (Double a, Double b) -> a + b),
-            Map.entry("subtract", (Double a, Double b) -> a - b),
-            Map.entry("multiply", (Double a, Double b) -> a * b),
-            Map.entry("divide",   (Double a, Double b) -> a / b)
+        var operations = Map.<String, BinaryOperator<Double>>of(
+            "add",      (Double a, Double b) -> a + b,
+            "subtract", (Double a, Double b) -> a - b,
+            "multiply", (Double a, Double b) -> a * b,
+            "divide",   (Double a, Double b) -> a / b,
+            "power",    (Double a, Double b) -> Math.pow(a, b)
         );
 
         if (!operations.containsKey(operation)) {
