@@ -13,6 +13,7 @@ public class ArithmeticController {
     @GetMapping("/arithmetic")
     public String calculate(@RequestParam String operation, @RequestParam String operand1, @RequestParam String operand2) {
 
+        // TODO: Add operator
         var operations = Map.<String, BinaryOperator<Double>>ofEntries(
             Map.entry("add",      (Double a, Double b) -> a + b),
             Map.entry("subtract", (Double a, Double b) -> a - b),
