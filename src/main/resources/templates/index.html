@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Calculator</title>
+  <link th:href="@{/static/default.css}" rel="stylesheet" />
+  <script type="text/javascript" th:src="@{/static/client.js}"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body onLoad="setValue(0)">
+  <div class="container">
+    <div id="results">
+      <div id="result"><span class="digit0">0</span></div>
+    </div>
+
+    <div id="loading" style="visibility:hidden"></div>
+
+    <div class="box">
+      <div class="calculator">
+        <div class="calculator-buttons">
+          <button class="btn span-2"></button>
+          <button class="btn" th:onClick="clearPressed()">C</button>
+          <button class="btn" th:onClick="clearPressed()">CE</button>
+
+          <button class="btn" th:onClick="numberPressed(7)">7</button>
+          <button class="btn" th:onClick="numberPressed(8)">8</button>
+          <button class="btn" th:onClick="numberPressed(9)">9</button>
+          <button class="btn" th:onClick="operationPressed('/')">&divide;</button>
+
+          <button class="btn" th:onClick="numberPressed(4)">4</button>
+          <button class="btn" th:onClick="numberPressed(5)">5</button>
+          <button class="btn" th:onClick="numberPressed(6)">6</button>
+          <button class="btn" th:onClick="operationPressed('*')">x</button>
+
+          <button class="btn" th:onClick="numberPressed(1)">1</button>
+          <button class="btn" th:onClick="numberPressed(2)">2</button>
+          <button class="btn" th:onClick="numberPressed(3)">3</button>
+          <button class="btn" th:onClick="operationPressed('-')">-</button>
+
+          <button class="btn" th:onClick="numberPressed(0)">0</button>
+          <button class="btn" th:onClick="decimalPressed()">.</button>
+          <button class="btn" th:onClick="operationPressed('+')">+</button>
+          <button class="btn" th:onClick="equalPressed()">=</button>
+
+          <!-- TODO #1: Buttons -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
