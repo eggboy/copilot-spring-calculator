@@ -1,4 +1,4 @@
-package com.copilot.calculator.api;
+package com.copilot.calculator.controller;
 
 import java.util.Map;
 import java.util.function.BinaryOperator;
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class ArithmeticController {
 
     @GetMapping("/arithmetic")
-    public String calculate(@RequestParam String operation, @RequestParam String operand1, @RequestParam String operand2) {
+    public String calculate(@RequestParam String operation, @RequestParam String operand1,
+            @RequestParam String operand2) {
 
-        // TODO: Add operator
+        // TODO #3: Add operator
         var operations = Map.<String, BinaryOperator<Double>>of(
-            "add",      (Double a, Double b) -> a + b,
-            "subtract", (Double a, Double b) -> a - b,
-            "multiply", (Double a, Double b) -> a * b,
-            "divide",   (Double a, Double b) -> a / b
-        );
+                "add", (Double a, Double b) -> a + b,
+                "subtract", (Double a, Double b) -> a - b,
+                "multiply", (Double a, Double b) -> a * b,
+                "divide", (Double a, Double b) -> a / b);
 
         if (!operations.containsKey(operation)) {
             throw new IllegalArgumentException("Invalid operation: " + operation);
